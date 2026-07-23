@@ -2,7 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 const NAV_ITEMS = [
   { to: '/', label: 'Dashboard', end: true },
-  { to: '/vendors', label: 'Vendor Directory' },
+  { to: '/vendors', label: 'Vendor Directory', end: true },
   { to: '/vendors/new', label: 'Create Vendor' },
   { to: '/performance', label: 'Performance' },
   { to: '/approvals', label: 'Approvals' },
