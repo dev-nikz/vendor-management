@@ -40,3 +40,17 @@ export interface VendorDirectoryResponse {
   page: number
   pageSize: number
 }
+
+export type VendorColumnVisibility = Partial<Record<VendorSortField, boolean>>
+
+export interface VendorDirectorySavedView {
+  id: string
+  name: string
+  search: string
+  category: string | null
+  status: VendorStatus | null
+  sortField: VendorSortField
+  sortDirection: 'asc' | 'desc'
+  pageSize: number
+  columnVisibility: VendorColumnVisibility
+}

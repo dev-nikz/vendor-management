@@ -3,6 +3,9 @@ import { VendorDirectoryFilters } from './components/VendorDirectoryFilters'
 import { VendorDirectoryTable } from './components/VendorDirectoryTable'
 import { VendorDirectoryTableSkeleton } from './components/VendorDirectoryTableSkeleton'
 import { VendorDirectoryPagination } from './components/VendorDirectoryPagination'
+import { ColumnSelector } from './components/ColumnSelector'
+import { SavedViewsMenu } from './components/SavedViewsMenu'
+import { ExportButton } from './components/ExportButton'
 import { useVendorDirectory } from './hooks/useVendorDirectory'
 import { useVendorDirectoryStore } from './store/useVendorDirectoryStore'
 
@@ -21,7 +24,14 @@ export function VendorDirectoryPage() {
         </p>
       </div>
 
-      <VendorDirectoryFilters />
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <VendorDirectoryFilters />
+        <div className="flex items-center gap-2">
+          <SavedViewsMenu />
+          <ColumnSelector />
+          <ExportButton />
+        </div>
+      </div>
 
       <div className="rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900">
         <QueryBoundary
