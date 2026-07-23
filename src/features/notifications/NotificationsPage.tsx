@@ -95,7 +95,7 @@ function NotificationListFiltered({
   }
 
   return (
-    <ul className="space-y-2">
+    <ul className="max-h-[600px] space-y-2 overflow-y-auto pr-1">
       {filtered.map((n) => (
         <NotificationItem key={n.id} notification={n} />
       ))}
