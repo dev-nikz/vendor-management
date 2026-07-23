@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ArrowDown, ArrowUp, ArrowUpDown, Star } from 'lucide-react'
 import { StatusBadge } from './StatusBadge'
 import { useVendorDirectoryStore } from '../store/useVendorDirectoryStore'
@@ -24,7 +25,14 @@ const COLUMNS: Column[] = [
     field: 'vendorName',
     label: 'Vendor Name',
     width: 'w-56',
-    render: (v) => <span className="font-medium text-gray-900 dark:text-gray-100">{v.vendorName}</span>,
+    render: (v) => (
+      <Link
+        to={`/vendors/${v.id}`}
+        className="font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+      >
+        {v.vendorName}
+      </Link>
+    ),
   },
   { field: 'vendorCode', label: 'Vendor Code', width: 'w-32' },
   { field: 'category', label: 'Category', width: 'w-44' },
