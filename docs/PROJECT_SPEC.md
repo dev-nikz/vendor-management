@@ -21,7 +21,7 @@ later requires no changes to component or hook code — only the MSW handlers ar
 | Styling | Tailwind CSS | Utility-first, fast to build responsive layouts (tablet/laptop/desktop) without a separate CSS architecture. |
 | Server state | **TanStack Query** | Caching, loading/error/retry states, pagination, and background refetch out of the box — matches the API layer requirements directly. |
 | Client/UI state | **Zustand** | Lightweight store for filters, saved views, sidebar/panel state — avoids re-render storms Context API would cause on a data-heavy dashboard. |
-| Charts | **Recharts** | Best TypeScript support among composable React chart libs; good fit for line/donut/bar without fighting React's rendering model. |
+| Charts | **Recharts** | Best TypeScript support among composable React chart libs; good fit for line/bar without fighting React's rendering model. |
 | Forms | **React Hook Form + Zod** | Uncontrolled-first design minimizes re-renders on large forms (Create Vendor); Zod gives schema validation with TS types inferred directly from the schema. |
 | Routing | React Router | Route-based code splitting per module via `React.lazy`. |
 | Mock API | **MSW (Mock Service Worker)** | Intercepts at the network layer — component/hook code is identical to a real backend integration. Can simulate latency, 401s, 500s, retries, empty states realistically. |
@@ -80,7 +80,7 @@ theoretical.
 
 | # | Module | Core requirement |
 |---|---|---|
-| 1 | Vendor Dashboard | 6 KPI cards + Performance Trend (line) + Category Distribution (donut), via Recharts |
+| 1 | Vendor Dashboard | 6 KPI cards + Performance Trend (line) + Category Distribution (horizontal bar), via Recharts |
 | 2 | Vendor Directory | Enterprise data table: search, filters, sort, pagination, sticky header, responsive, saved views, column selection, export |
 | 3 | Vendor Details | Tabbed view: Overview, Contacts, Performance, Purchase History, Documents, Payments, Projects, Issues, Audit Timeline |
 | 4 | Create Vendor | Multi-section form with validation (React Hook Form + Zod), file upload for docs |
