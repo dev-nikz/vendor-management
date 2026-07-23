@@ -1,4 +1,4 @@
-export type VendorStatus = 'Active' | 'Blacklisted' | 'Pending' | 'On Hold'
+export type VendorStatus = 'Active' | 'Blacklisted' | 'Pending' | 'On Hold' | 'Rejected'
 
 export interface VendorDirectoryEntry {
   id: string

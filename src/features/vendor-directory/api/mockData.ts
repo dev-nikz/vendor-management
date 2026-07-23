@@ -44,6 +44,7 @@ const STATUS_COUNTS: Record<VendorStatus, number> = {
   Blacklisted: 9,
   Pending: 14,
   'On Hold': 13,
+  Rejected: 0,
 }
 
 const CATEGORY_CODE_PREFIX: Record<string, string> = {
