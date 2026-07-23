@@ -25,8 +25,7 @@ later requires no changes to component or hook code — only the MSW handlers ar
 | Forms | **React Hook Form + Zod** | Uncontrolled-first design minimizes re-renders on large forms (Create Vendor); Zod gives schema validation with TS types inferred directly from the schema. |
 | Routing | React Router | Route-based code splitting per module via `React.lazy`. |
 | Mock API | **MSW (Mock Service Worker)** | Intercepts at the network layer — component/hook code is identical to a real backend integration. Can simulate latency, 401s, 500s, retries, empty states realistically. |
-| Virtualization | `@tanstack/react-virtual` | Vendor Directory (Module 2) table needs to handle large row counts without perf degradation. |
-| Table primitives | `@tanstack/react-table` | Headless table logic (sorting, filtering, pagination, column visibility) pairs with virtualization and Tailwind styling. |
+| Table rendering | Plain `<table>` + manual column config | Server-side sort/filter/pagination (via MSW) made TanStack Table's client-side state management unnecessary; a manual column array kept things simpler. `@tanstack/react-table` stays installed for a future module if a client-side table need arises. |
 
 ## 3. Folder Structure — Feature-Sliced
 
@@ -73,7 +72,7 @@ theoretical.
 
 - `React.memo` on list/row/card components; `useMemo`/`useCallback` for derived data and handlers passed to memoized children
 - Route-based `React.lazy` + code splitting per feature module
-- `@tanstack/react-virtual` for the Vendor Directory table
+- Vendor Directory table: dropped row virtualization (tried `@tanstack/react-virtual`, hit a scroll-update issue not worth chasing since server-side pagination already caps rows per page at 100) — capped page size instead of rendering all 248 rows unpaginated
 - Colocated state so unrelated UI (e.g. KPI cards) doesn't re-render on filter changes elsewhere
 
 ## 6. Modules & Build Order
