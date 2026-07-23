@@ -5,6 +5,7 @@ const STATUS_STYLES: Record<VendorStatus, string> = {
   Blacklisted: 'bg-red-50 text-red-700 dark:bg-red-950/50 dark:text-red-400',
   Pending: 'bg-amber-50 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400',
   'On Hold': 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300',
+  Rejected: 'bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-400',
 }
 
 const STATUS_DOT: Record<VendorStatus, string> = {
@@ -12,6 +13,7 @@ const STATUS_DOT: Record<VendorStatus, string> = {
   Blacklisted: 'bg-red-500',
   Pending: 'bg-amber-500',
   'On Hold': 'bg-gray-400',
+  Rejected: 'bg-rose-500',
 }
 
 export function StatusBadge({ status }: { status: VendorStatus }) {

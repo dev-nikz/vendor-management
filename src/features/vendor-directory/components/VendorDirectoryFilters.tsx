@@ -13,7 +13,7 @@ const CATEGORIES = [
   'HVAC',
 ]
 
-const STATUSES = ['Active', 'Blacklisted', 'Pending', 'On Hold'] as const
+const STATUSES = ['Active', 'Blacklisted', 'Pending', 'On Hold', 'Rejected'] as const
 
 const selectClasses =
   'rounded-md border border-gray-300 bg-white py-2 pl-3 pr-8 text-sm text-gray-700 focus:border-indigo-500 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200'
