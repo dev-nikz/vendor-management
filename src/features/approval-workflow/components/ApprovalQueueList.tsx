@@ -18,7 +18,7 @@ export function ApprovalQueueList({ entries, selectedId, onSelect }: ApprovalQue
   }
 
   return (
-    <ul className="space-y-1.5">
+    <ul className="max-h-[600px] space-y-1.5 overflow-y-auto pr-1">
       {entries.map((entry) => (
         <li key={entry.id}>
           <button
